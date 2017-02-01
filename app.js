@@ -4,9 +4,15 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
+const mongoose = require('mongoose');
 const routes = require('./routes/index');
+const db = require('./config/db-connect')(process.env.NODE_ENV);
 
 const app = express();
+
+// MongoDB
+mongoose.connect(db);
+mongoose.model('Game', require('./models/question').Game);
 
 nunjucks.configure('views', {
   watch: true,
