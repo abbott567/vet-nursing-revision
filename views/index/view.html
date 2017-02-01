@@ -8,7 +8,17 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds">
-        {{result}}
+        <h1>{{result.question}}</h1>
+
+        <form method="post">
+          {% for answer in result.answers %}
+            <input type="radio" name="answer" value="{{answer.answer}}" />{{answer.answer}}
+          {% endfor %}
+
+          <input type="hidden" name="id" value="{{result._id}}">
+
+          <button type="submit">Submit answer</button>
+        </form>
       </div>
     </div>
   </main>
