@@ -7,6 +7,7 @@ const answerSchema = new mongoose.Schema({
 const questionSchema = new mongoose.Schema({
   question: String,
   answers: [answerSchema],
+  correct: String,
   createdAt: {
     type: Date,
     default: Date.now
