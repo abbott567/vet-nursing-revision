@@ -1,22 +1,13 @@
 const mongoose = require('mongoose');
+const {randomNum} = require('../common/functions');
 
 const Question = mongoose.model('Question');
 
 module.exports = {
-  getQuestion: () => {
-    // Get the count of all users
-    Question.count().exec((err, count) => {
-      const random = Math.floor(Math.random() * count);
-      if (err) {
-        console.log(err);
-      }
-
-      Question.findOne().skip(random).exec((err, result) => {
-        if (err) {
-          console.log(err);
-        }
-        console.log(result);
-      });
+  getQuestion: answeredQuestions => {
+    return Question.find({_id: {$nin: answeredQuestions}})
+    .then(results => {
+      return results[randomNum(0, randomNum.length - 1)];
     });
   }
 };
