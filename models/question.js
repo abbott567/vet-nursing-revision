@@ -10,4 +10,4 @@ const questionSchema = new mongoose.Schema({
   createdAt: {type: Date, default: Date.now}
 });
 
-module.exports.Game = questionSchema;
+module.exports.Question = questionSchema;

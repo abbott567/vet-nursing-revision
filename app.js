@@ -12,7 +12,7 @@ const app = express();
 
 // MongoDB
 mongoose.connect(db);
-mongoose.model('Game', require('./models/question').Game);
+mongoose.model('Question', require('./models/question').Question);
 
 nunjucks.configure('views', {
   watch: true,
