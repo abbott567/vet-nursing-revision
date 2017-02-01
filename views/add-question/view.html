@@ -1,0 +1,45 @@
+{% extends "../layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% if saved %}
+      Question saved
+    {% elseif notSaved %}
+      Question not saved
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1>Create a question</h1>
+
+        <form method="post">
+          <label for="question">Question</label>
+          <textarea name="question"></textarea>
+
+          <label for="a">Answer A</label>
+          <input type="text" name="a" />
+
+          <label for="b">Answer B</label>
+          <input type="text" name="b" />
+
+          <label for="c">Answer C</label>
+          <input type="text" name="c" />
+
+          <label for="d">Answer D</label>
+          <input type="text" name="d" />
+
+          <fieldset>
+            <legend>Correct answer</legend>
+            <input type="radio" name="correct" value="a" />a
+            <input type="radio" name="correct" value="b" />b
+            <input type="radio" name="correct" value="c" />c
+            <input type="radio" name="correct" value="d" />d
+          </fieldset>
+
+          <button type="submit">Save</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

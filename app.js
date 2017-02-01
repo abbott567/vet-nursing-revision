@@ -5,12 +5,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
 const mongoose = require('mongoose');
-const routes = require('./routes/index');
 const db = require('./config/db-connect')(process.env.NODE_ENV);
 
 const app = express();
 
 // MongoDB
+mongoose.Promise = global.Promise;
 mongoose.connect(db);
 mongoose.model('Question', require('./models/question').Question);
 
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', require('./routes'));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
