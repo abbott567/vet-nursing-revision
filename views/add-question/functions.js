@@ -12,7 +12,7 @@ module.exports = {
         {answer: body.c},
         {answer: body.d}
       ],
-      correct: body.correct
+      correct: body[body.correct]
     });
   }
 };
