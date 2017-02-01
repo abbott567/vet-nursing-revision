@@ -1,7 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
-
-const Question = mongoose.model('Question');
+const {buildQuestion} = require('./functions');
 
 const router = new express.Router();
 
@@ -10,16 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const q = new Question({
-    question: req.body.question,
-    answers: [
-      {answer: req.body.a},
-      {answer: req.body.b},
-      {answer: req.body.c},
-      {answer: req.body.d}
-    ],
-    correct: req.body.correct
-  });
+  const q = buildQuestion(req.body);
 
   q.save()
   .then(() => {
