@@ -4,7 +4,8 @@ const {getQuestion} = require('./functions');
 const router = new express.Router();
 
 router.get('/', (req, res) => {
-  getQuestion([])
+  const answeredQuestions = req.cookies.answeredQuestions || [];
+  getQuestion(answeredQuestions)
   .then(result => {
     res.render('index/view', {result});
   })
