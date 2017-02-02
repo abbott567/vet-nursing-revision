@@ -1,5 +1,5 @@
 module.exports = env => {
-  if (env === 'development') {
+  if (env === 'development' || 'test') {
     return 'mongodb://localhost/vet-questions';
   }
 };
