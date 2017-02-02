@@ -23,12 +23,12 @@ module.exports = {
   },
 
   getCategories: () => {
-    return Category.find().distinct('name')
+    return Category.find({})
     .then(results => {
-      console.log(results);
+      return results;
     })
     .catch(err => {
-      console.log(err);
+      return err;
     });
   }
 };

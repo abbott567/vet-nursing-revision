@@ -36,6 +36,13 @@
             <input type="radio" name="correct" value="d" />d
           </fieldset>
 
+          <fieldset>
+            <legend>Category</legend>
+            {% for category in categories %}
+              <input type="checkbox" name="categories[]" value="{{category._id}}" />{{category.name}}
+            {% endfor %}
+          </fieldset>
+
           <button type="submit">Save</button>
         </form>
 

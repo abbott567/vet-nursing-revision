@@ -3,9 +3,9 @@ const {getQuestion} = require('./functions');
 
 const router = new express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/:catId/question', (req, res, next) => {
   const answeredQuestions = req.cookies.answeredQuestions || [];
-  getQuestion(answeredQuestions)
+  getQuestion(answeredQuestions, req.params.catId)
   .then(result => {
     if (result) {
       res.render('question/view', {result});
@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/:catId/question', (req, res) => {
   const answeredQuestions = req.cookies.answeredQuestions || [];
   answeredQuestions.push(req.body.id);
   res.cookie('answeredQuestions', answeredQuestions);
