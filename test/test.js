@@ -1,1 +1,4 @@
-require('../views/common/tests')();
+
+// Common Tests
+require('../views/common/tests').randomNum();
+require('../views/common/tests').shuffle();
