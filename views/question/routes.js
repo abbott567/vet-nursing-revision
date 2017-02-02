@@ -22,7 +22,7 @@ router.post('/:catId/question', (req, res) => {
   const answeredQuestions = req.cookies.answeredQuestions || [];
   answeredQuestions.push(req.body.id);
   res.cookie('answeredQuestions', answeredQuestions);
-  res.redirect(`/${req.params.catId}/question`);
+  res.redirect(`/cat/${req.params.catId}/question`);
 });
 
 module.exports = router;
