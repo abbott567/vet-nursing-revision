@@ -7,3 +7,6 @@ require('../views/common/tests').shuffle();
 
 // Add Question
 require('../views/add-question/tests').buildQuestion();
+
+// View Question
+require('../views/index/tests').getQuestion();
