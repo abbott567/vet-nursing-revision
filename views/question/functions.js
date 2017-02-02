@@ -13,9 +13,12 @@ module.exports = {
       ]
     })
     .then(results => {
-      const result = results[randomNum(0, results.length - 1)];
-      result.answers = shuffle(result.answers);
-      return result;
+      if (results.length > 0) {
+        const result = results[randomNum(0, results.length - 1)];
+        result.answers = shuffle(result.answers);
+        return result;
+      }
+      return false;
     });
   }
 };
