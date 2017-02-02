@@ -1,0 +1,25 @@
+{% extends "../layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% if saved %}
+      Category saved
+    {% elseif notSaved %}
+      Category not saved
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1>Create a category</h1>
+
+        <form method="post">
+          <label for="question">Name</label>
+          <input type="text" name="name" />
+
+          <button type="submit">Save</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

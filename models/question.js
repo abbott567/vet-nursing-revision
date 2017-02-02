@@ -8,6 +8,7 @@ const questionSchema = new mongoose.Schema({
   question: String,
   answers: [answerSchema],
   correct: String,
+  categories: [String],
   createdAt: {
     type: Date,
     default: Date.now

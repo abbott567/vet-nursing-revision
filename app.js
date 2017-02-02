@@ -13,6 +13,7 @@ const app = express();
 mongoose.Promise = global.Promise;
 mongoose.connect(db);
 mongoose.model('Question', require('./models/question').Question);
+mongoose.model('Category', require('./models/category').Category);
 
 nunjucks.configure('views', {
   watch: true,

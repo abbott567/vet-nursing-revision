@@ -1,5 +1,5 @@
 const express = require('express');
-const {buildQuestion} = require('./functions');
+const {buildQuestion, getCategories} = require('./functions');
 
 const router = new express.Router();
 
