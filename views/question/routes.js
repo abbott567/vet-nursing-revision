@@ -21,9 +21,6 @@ router.get('/:catId/question', (req, res, next) => {
 });
 
 router.post('/:catId/question', (req, res, next) => {
-  const answeredQuestions = req.cookies.answeredQuestions || [];
-  answeredQuestions.push(req.body.id);
-  res.cookie('answeredQuestions', answeredQuestions);
   Question.findOne({_id: req.body.id})
   .then(q => {
     if (req.body.answer === q.correct) {
@@ -35,6 +32,13 @@ router.post('/:catId/question', (req, res, next) => {
       incorrect.push(q.id);
       res.cookie('incorrect', incorrect);
     }
+  })
+  .then(() => {
+    const answeredQuestions = req.cookies.answeredQuestions || [];
+    answeredQuestions.push(req.body.id);
+    res.cookie('answeredQuestions', answeredQuestions);
+  })
+  .then(() => {
     res.redirect(`/cat/${req.params.catId}/question`);
   })
   .catch(err => {
