@@ -9,4 +9,4 @@ require('../views/common/tests').shuffle();
 require('../views/add-question/tests').buildQuestion();
 
 // View Question
-require('../views/index/tests').getQuestion();
+require('../views/question/tests').getQuestion();
