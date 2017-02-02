@@ -3,6 +3,15 @@ const {buildQuestion} = require('./functions');
 
 const expect = chai.expect;
 
+function matchAnswers(q) {
+  for (let i = 0; i < q.answers.length; i++) {
+    if (q.answers[i].answer === q.correct) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
 module.exports = {
   buildQuestion: () => {
     describe('buildQuestion(body)', () => {
@@ -41,12 +50,3 @@ module.exports = {
     });
   }
 };
-
-function matchAnswers(q) {
-  for (let i = 0; i < q.answers.length; i++) {
-    if (q.answers[i].answer === q.correct) {
-      return 1;
-    }
-  }
-  return 0;
-}
