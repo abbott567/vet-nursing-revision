@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1>Results</h1>
+
+        {{correctCount}} / {{totalCount}}
+
+        <h2>Correct</h2>
+        {% for question in correct %}
+          <p>
+            Q: {{question.question}}<br />
+            A: {{question.correct}}
+          </p>
+        {% endfor %}
+
+        <h2>Incorrect</h2>
+        {% for question in incorrect %}
+          <p>
+            Q: {{question.question}}<br />
+            A: {{question.correct}}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

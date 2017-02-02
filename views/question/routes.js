@@ -9,7 +9,7 @@ router.get('/:catId/question', (req, res, next) => {
     if (result) {
       res.render('question/view', {result});
     } else {
-      res.redirect('/finished');
+      res.redirect('/results');
     }
   })
   .catch(err => {
