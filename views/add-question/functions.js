@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const Question = mongoose.model('Question');
-const Category = mongoose.model('Category');
 
 module.exports = {
   buildQuestion: body => {
@@ -20,15 +19,5 @@ module.exports = {
       q.categories.push(body.categories[i]);
     }
     return q;
-  },
-
-  getCategories: () => {
-    return Category.find({})
-    .then(results => {
-      return results;
-    })
-    .catch(err => {
-      return err;
-    });
   }
 };
