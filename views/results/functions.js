@@ -13,9 +13,16 @@ module.exports = {
       })
     ])
     .then(([correct, incorrect]) => {
+      const correctCount = correct.length;
+      const incorrectCount = incorrect.length;
+      const totalCount = correct.length + incorrect.length;
+      const percentCount = (correctCount / totalCount) * 100;
+
       return {
-        correctCount: correct.length,
-        totalCount: correct.length + incorrect.length,
+        correctCount,
+        incorrectCount,
+        totalCount,
+        percentCount,
         correct,
         incorrect
       };

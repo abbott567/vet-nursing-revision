@@ -9,8 +9,20 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         <h1>Results</h1>
+        <p>
+          Correct<br />
+          {{correctCount}}
+        </p>
 
-        {{correctCount}} / {{totalCount}}
+        <p>
+          Incorrect<br />
+          {{incorrectCount}}
+        </p>
+
+        <p>
+          Percentage<br />
+          {{percentCount}}%
+        </p>
 
         <h2>Correct</h2>
         {% for question in correct %}
@@ -27,6 +39,8 @@
             A: {{question.correct}}
           </p>
         {% endfor %}
+
+        <a href="/reset">Reset</a>
       </div>
     </div>
   </main>
