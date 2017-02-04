@@ -29,7 +29,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
+
+// Static paths
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/stylesheets', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
 
 app.use('/', require('./routes'));
 
