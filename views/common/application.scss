@@ -23,3 +23,7 @@ body {
 .grey-text {
   color: $dark-grey;
 }
+
+details {
+  cursor: pointer;
+}

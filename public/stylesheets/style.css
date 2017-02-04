@@ -39,3 +39,6 @@ body {
 
 .grey-text {
   color: #888; }
+
+details {
+  cursor: pointer; }
