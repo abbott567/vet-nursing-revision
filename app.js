@@ -1,4 +1,4 @@
-require('./config/db-connect')();
+const db = require('./config/db-connect')(process.env.NODE_ENV);
 const path = require('path');
 const express = require('express');
 const logger = require('morgan');
@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 
 // MongoDB
 mongoose.Promise = global.Promise;
+mongoose.connect(db);
 mongoose.model('Question', require('./models/question').Question);
 mongoose.model('Category', require('./models/category').Category);
 

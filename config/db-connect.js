@@ -1,8 +1,6 @@
-const mongoose = require('mongoose');
-
-module.exports = () => {
-  if (process.env.NODE_ENV === 'development' || 'test') {
-    return mongoose.connect('mongodb://localhost/vet-questions');
+module.exports = env => {
+  if (env === 'development' || env === 'test') {
+    return 'mongodb://localhost/vet-questions';
   }
-  return mongoose.connect(process.env.MONGODB_URI);
+  return env.MONGODB_URI;
 };
