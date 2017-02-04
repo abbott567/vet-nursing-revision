@@ -39,7 +39,7 @@
       <div class="col-md-8 col-md-offset-2">
         <hr />
 
-        {% if incorrect %}
+        {% if incorrect != '' %}
           <h2>Incorrect answers</h2>
           <div class="indent indent-incorrect">
             {% for question in incorrect %}
@@ -51,7 +51,7 @@
           </div>
         {% endif %}
 
-        {% if correct %}
+        {% if correct != ''%}
           <h2>Correct answers</h2>
           <details>
             <summary>Show correct answers</summary>
