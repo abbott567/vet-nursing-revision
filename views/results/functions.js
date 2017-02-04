@@ -16,7 +16,7 @@ module.exports = {
       const correctCount = correct.length;
       const incorrectCount = incorrect.length;
       const totalCount = correct.length + incorrect.length;
-      const percentCount = (correctCount / totalCount) * 100;
+      const percentCount = Math.round((correctCount / totalCount) * 100);
 
       return {
         correctCount,
