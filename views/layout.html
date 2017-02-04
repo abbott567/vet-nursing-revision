@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <main id="content" role="main">
+      {% block content %}{% endblock %}
+    </main>
   </body>
+  <script src="/javascripts/jquery.min.js"></script>
+  <script>
+    {% block pageScripts %}{% endblock %}
+  </script>
 </html>

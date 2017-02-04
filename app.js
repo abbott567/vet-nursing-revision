@@ -33,6 +33,7 @@ app.use(cookieParser());
 // Static paths
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/stylesheets', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
+app.use('/javascripts', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 
 app.use('/', require('./routes'));
 
