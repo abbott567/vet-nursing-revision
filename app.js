@@ -1,4 +1,3 @@
-const db = require('./config/db-connect')(process.env.NODE_ENV);
 const path = require('path');
 const express = require('express');
 const logger = require('morgan');
@@ -6,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
 const mongoose = require('mongoose');
+const db = require('./config/db-connect')(process.env.NODE_ENV);
 
 // MongoDB
 mongoose.Promise = global.Promise;
