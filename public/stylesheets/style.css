@@ -29,6 +29,7 @@
     font-weight: bold; }
 
 body {
+  padding: 10px;
   padding-bottom: 50px; }
 
 .red-text {
@@ -42,3 +43,7 @@ body {
 
 details {
   cursor: pointer; }
+
+@media (max-width: 767px) {
+  .btn {
+    width: 100%; } }
