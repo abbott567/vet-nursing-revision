@@ -11,5 +11,31 @@
 .radio input {
   display: none; }
 
+.indent {
+  border-left: 3px solid;
+  padding-left: 20px; }
+
+.indent-correct {
+  border-color: #008000; }
+
+.indent-incorrect {
+  border-color: #c00; }
+
+.results-summary {
+  font-size: 200%;
+  text-align: center; }
+  .results-summary:span {
+    font-size: 200%;
+    font-weight: bold; }
+
 body {
   padding-bottom: 50px; }
+
+.red-text {
+  color: #c00; }
+
+.green-text {
+  color: #008000; }
+
+.grey-text {
+  color: #888; }

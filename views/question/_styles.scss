@@ -1,13 +1,13 @@
 .radio label {
-  border: 1px solid #ccc;
+  border: 1px solid $light-grey;
   border-radius: 5px;
   display: block;
   font-size: 1.3em;
   padding: 20px;
 
   &.selected {
-    background: #d9edf7;
-    border: 1px solid #bce8f1;
+    background: $light-blue;
+    border: 1px solid $dark-blue;
   }
 }
 

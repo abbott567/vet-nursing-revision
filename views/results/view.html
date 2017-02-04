@@ -5,43 +5,77 @@
 {% endblock %}
 
 {% block content %}
-  <main id="content" role="main">
-    <div class="grid-row">
-      <div class="column-two-thirds">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
         <h1>Results</h1>
-        <p>
-          Correct<br />
-          {{correctCount}}
-        </p>
 
-        <p>
-          Incorrect<br />
-          {{incorrectCount}}
-        </p>
+        <hr />
 
-        <p>
-          Percentage<br />
-          {{percentCount}}%
-        </p>
-
-        <h2>Correct</h2>
-        {% for question in correct %}
-          <p>
-            Q: {{question.question}}<br />
-            A: {{question.correct}}
+        <div class="col-md-4">
+          <p class="results-summary">
+            Correct:<br />
+            <span class="green-text">{{correctCount}}</span>
           </p>
-        {% endfor %}
+        </div>
 
-        <h2>Incorrect</h2>
-        {% for question in incorrect %}
-          <p>
-            Q: {{question.question}}<br />
-            A: {{question.correct}}
+        <div class="col-md-4">
+          <p class="results-summary">
+            Incorrect:<br />
+            <span class="red-text">{{incorrectCount}}</span>
           </p>
-        {% endfor %}
+        </div>
 
-        <a href="/reset">Reset</a>
+        <div class="col-md-4">
+          <p class="results-summary">
+            Percentage:<br />
+            <span>{{percentCount}}%</span>
+          </p>
+        </div>
       </div>
     </div>
-  </main>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <hr />
+
+        {% if incorrect %}
+          <h2>Incorrect answers</h2>
+          <div class="indent indent-incorrect">
+            {% for question in incorrect %}
+              <p>
+                <strong>{{question.question}}</strong><br />
+                <strong><span class="grey-text">{{question.correct}}</span></strong>
+              </p>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if correct %}
+          <h2>Correct answers</h2>
+          <details>
+            <summary>Show incorrect answers</summary>
+
+            <br />
+
+            <div class="indent indent-correct">
+              {% for question in correct %}
+                <p>
+                  <strong>{{question.question}}</strong><br />
+                  <strong><span class="green-text">{{question.correct}}</span></strong>
+                </p>
+              {% endfor %}
+            </div>
+          </details>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <hr />
+        <a class="btn btn-primary btn-lg" href="/reset" role="button">Reset</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}

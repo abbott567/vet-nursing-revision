@@ -1,5 +1,25 @@
+$red: #c00;
+$green: #008000;
+$dark-grey: #888;
+$light-grey: #ccc;
+$light-blue: #d9edf7;
+$dark-blue: #bce8f1;
+
 @import '../question/styles';
+@import '../results/styles';
 
 body {
   padding-bottom: 50px;
+}
+
+.red-text {
+  color: $red;
+}
+
+.green-text {
+  color: $green;
+}
+
+.grey-text {
+  color: $dark-grey;
 }
