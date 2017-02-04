@@ -7,13 +7,13 @@ const nunjucks = require('nunjucks');
 const mongoose = require('mongoose');
 const db = require('./config/db-connect')(process.env.NODE_ENV);
 
-const app = express();
-
 // MongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(db);
 mongoose.model('Question', require('./models/question').Question);
 mongoose.model('Category', require('./models/category').Category);
+
+const app = express();
 
 nunjucks.configure('views', {
   watch: true,
