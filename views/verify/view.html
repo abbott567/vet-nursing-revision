@@ -1,0 +1,31 @@
+{% extends "../layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      {% if error %}
+        <div class="alert alert-danger" role="alert">Invalid username or password</div>
+      {% endif %}
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1>Sign in</h1>
+
+          <form method="post">
+            <label for="username">Username</label>
+            <input type="text" name="username" />
+
+            <label for="password">Password</label>
+            <input type="password" name="password" />
+
+            <hr />
+
+            <button class="btn btn-primary btn-lg" type="submit">Sign in</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

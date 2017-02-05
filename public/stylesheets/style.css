@@ -58,7 +58,7 @@ textarea {
   min-height: 100px;
   width: 100%; }
 
-input[type="text"] {
+input[type="password"], input[type="text"] {
   width: 100%; }
 
 @media (max-width: 767px) {

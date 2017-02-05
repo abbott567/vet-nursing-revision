@@ -7,6 +7,7 @@ router.use('/cat', require('./views/question/routes'));
 router.use('/add-category', require('./views/add-category/routes'));
 router.use('/add-question', require('./views/add-question/routes'));
 router.use('/results', require('./views/results/routes'));
+router.use('/verify', require('./views/verify/routes'));
 
 router.get('/reset', (req, res) => {
   res.clearCookie('correct');

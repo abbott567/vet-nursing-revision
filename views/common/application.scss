@@ -49,9 +49,11 @@ textarea {
 }
 
 input {
+  &[type="password"],
   &[type="text"] {
     width: 100%;
   }
+
 }
 
 @media (max-width: 767px) {

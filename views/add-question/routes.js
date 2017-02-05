@@ -5,13 +5,17 @@ const {buildQuestion} = require('./functions');
 const router = new express.Router();
 
 router.get('/', (req, res, next) => {
-  getCategories()
-  .then(categories => {
-    res.render('add-question/view', {categories});
-  })
-  .catch(err => {
-    next(err);
-  });
+  if (req.cookies.verified === 'true') {
+    getCategories()
+    .then(categories => {
+      res.render('add-question/view', {categories});
+    })
+    .catch(err => {
+      next(err);
+    });
+  } else {
+    res.redirect('/verify?question=true');
+  }
 });
 
 router.post('/', (req, res, next) => {

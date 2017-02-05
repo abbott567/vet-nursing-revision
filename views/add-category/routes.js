@@ -5,7 +5,11 @@ const router = new express.Router();
 const Category = mongoose.model('Category');
 
 router.get('/', (req, res) => {
-  res.render('add-category/view');
+  if (req.cookies.verified === 'true') {
+    res.render('add-category/view');
+  } else {
+    res.redirect('/verify?category=true');
+  }
 });
 
 router.post('/', (req, res) => {
