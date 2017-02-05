@@ -30,7 +30,7 @@
           <input type="text" name="d" />
 
           <fieldset>
-            <legend>Correct answer</legend>
+            <h2>Correct answer</h2>
             <div class="radio">
               <label class="choose-answer-label">
                 <input class="choose-answer" type="radio" name="correct" value="a" />A
@@ -57,7 +57,7 @@
           </fieldset>
 
           <fieldset>
-            <legend>Category</legend>
+            <h2>Category</h2>
             {% for category in categories %}
               <div class="radio">
                 <label class="choose-answer-label">
@@ -67,6 +67,7 @@
             {% endfor %}
           </fieldset>
 
+          <hr />
           <button type="submit" class="btn btn-primary btn-lg">Save question</button>
         </form>
       </div>
