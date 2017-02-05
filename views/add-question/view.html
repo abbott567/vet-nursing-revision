@@ -1,15 +1,16 @@
 {% extends "../layout.html" %}
 
 {% block content %}
-  {% if saved %}
-    Question saved
-  {% elseif notSaved %}
-    Question not saved
-  {% endif %}
-
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
+        {% if saved %}
+          <div class="alert alert-success" role="alert">Question saved</div>
+        {% elseif notSaved %}
+          <div class="alert alert-danger" role="alert">Question not saved</div>
+        {% endif %}
+
+
         <h1>Create a question</h1>
 
         <form method="post">

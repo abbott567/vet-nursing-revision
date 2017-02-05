@@ -1,25 +1,28 @@
 {% extends "../layout.html" %}
 
 {% block content %}
-  <main id="content" role="main">
-    {% if saved %}
-      Category saved
-    {% elseif notSaved %}
-      Category not saved
-    {% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      {% if saved %}
+        <div class="alert alert-success" role="alert">Category saved</div>
+      {% elseif notSaved %}
+        <div class="alert alert-danger" role="alert">Category not saved</div>
+      {% endif %}
 
-    <div class="grid-row">
-      <div class="column-two-thirds">
-        <h1>Create a category</h1>
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1>Create a category</h1>
 
-        <form method="post">
-          <label for="question">Name</label>
-          <input type="text" name="name" />
+          <form method="post">
+            <label for="question">Name</label>
+            <input type="text" name="name" />
 
-          <button type="submit">Save</button>
-        </form>
+            <button class="btn btn-primary btn-lg" type="submit">Save category</button>
+          </form>
 
+        </div>
       </div>
     </div>
-  </main>
+  </div>
 {% endblock %}
