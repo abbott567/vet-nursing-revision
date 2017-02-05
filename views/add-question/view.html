@@ -1,52 +1,78 @@
 {% extends "../layout.html" %}
 
 {% block content %}
-  <main id="content" role="main">
-    {% if saved %}
-      Question saved
-    {% elseif notSaved %}
-      Question not saved
-    {% endif %}
+  {% if saved %}
+    Question saved
+  {% elseif notSaved %}
+    Question not saved
+  {% endif %}
 
-    <div class="grid-row">
-      <div class="column-two-thirds">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
         <h1>Create a question</h1>
 
         <form method="post">
           <label for="question">Question</label>
           <textarea name="question"></textarea>
 
-          <label for="a">Answer A</label>
+          <label for="a">A</label>
           <input type="text" name="a" />
 
-          <label for="b">Answer B</label>
+          <label for="b">B</label>
           <input type="text" name="b" />
 
-          <label for="c">Answer C</label>
+          <label for="c">C</label>
           <input type="text" name="c" />
 
-          <label for="d">Answer D</label>
+          <label for="d">D</label>
           <input type="text" name="d" />
 
           <fieldset>
             <legend>Correct answer</legend>
-            <input type="radio" name="correct" value="a" />a
-            <input type="radio" name="correct" value="b" />b
-            <input type="radio" name="correct" value="c" />c
-            <input type="radio" name="correct" value="d" />d
+            <div class="radio">
+              <label class="choose-answer-label">
+                <input class="choose-answer" type="radio" name="correct" value="a" />A
+              </label>
+            </div>
+
+            <div class="radio">
+              <label class="choose-answer-label">
+                <input class="choose-answer" type="radio" name="correct" value="b" />B
+              </label>
+            </div>
+
+            <div class="radio">
+              <label class="choose-answer-label">
+                <input class="choose-answer" type="radio" name="correct" value="c" />C
+              </label>
+            </div>
+
+            <div class="radio">
+              <label class="choose-answer-label">
+                <input class="choose-answer" type="radio" name="correct" value="d" />D
+              </label>
+            </div>
           </fieldset>
 
           <fieldset>
             <legend>Category</legend>
             {% for category in categories %}
-              <input type="checkbox" name="categories[]" value="{{category._id}}" />{{category.name}}
+              <div class="radio">
+                <label class="choose-answer-label">
+                  <input class="choose-answer" type="checkbox" name="categories[]" value="{{category._id}}" />{{category.name}}
+                </label>
+              </div>
             {% endfor %}
           </fieldset>
 
-          <button type="submit">Save</button>
+          <button type="submit" class="btn btn-primary btn-lg">Save question</button>
         </form>
-
       </div>
     </div>
-  </main>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {% include './frontend-js.js'%}
 {% endblock %}
