@@ -32,6 +32,9 @@ body {
   padding: 10px;
   padding-bottom: 50px; }
 
+a:hover {
+  text-decoration: none; }
+
 .red-text {
   color: #c00; }
 

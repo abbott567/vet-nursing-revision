@@ -1,21 +1,21 @@
 {% extends "../layout.html" %}
 
 {% block content %}
-  <main id="content" role="main">
-    {% if saved %}
-      Question saved
-    {% elseif notSaved %}
-      Question not saved
-    {% endif %}
-
-    <div class="grid-row">
-      <div class="column-two-thirds">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
         <h1>Choose a category</h1>
 
         {% for category in categories %}
-          <a href="/cat/{{category._id}}/question">{{category.name}}</a>
+          <div class="radio">
+            <a class="choose-answer" href="/cat/{{category._id}}/question">
+              <label class="choose-answer-label">
+                {{category.name}}
+              </label>
+            </a>
+          </div>
         {% endfor %}
       </div>
     </div>
-  </main>
+  </div>
 {% endblock %}
