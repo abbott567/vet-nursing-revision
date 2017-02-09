@@ -26,6 +26,9 @@ module.exports = {
         correct,
         incorrect
       };
+    })
+    .catch(err => {
+      throw err;
     });
   }
 };

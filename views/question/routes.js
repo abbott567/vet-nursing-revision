@@ -3,7 +3,7 @@ const {getQuestion, updateTotals, updateQuestionsAnswered} = require('./function
 
 const router = new express.Router();
 
-router.get('/:catId/question', (req, res, next) => {
+router.get('/:catId/question', (req, res) => {
   getQuestion(req)
   .then(result => {
     if (result) {
@@ -11,22 +11,16 @@ router.get('/:catId/question', (req, res, next) => {
     } else {
       res.redirect('/results');
     }
-  })
-  .catch(err => {
-    next(err);
   });
 });
 
-router.post('/:catId/question', (req, res, next) => {
+router.post('/:catId/question', (req, res) => {
   updateTotals(req, res)
   .then(() => {
     updateQuestionsAnswered(req, res);
   })
   .then(() => {
     res.redirect(`/cat/${req.params.catId}/question`);
-  })
-  .catch(err => {
-    next(err);
   });
 });
 

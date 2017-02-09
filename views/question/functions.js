@@ -20,6 +20,9 @@ module.exports = {
         return result;
       }
       return false;
+    })
+    .catch(err => {
+      throw err;
     });
   },
 
@@ -35,6 +38,9 @@ module.exports = {
         incorrect.push(q.id);
         res.cookie('incorrect', incorrect);
       }
+    })
+    .catch(err => {
+      throw err;
     });
   },
 
