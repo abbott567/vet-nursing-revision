@@ -12,6 +12,7 @@ describe('Unit Tests', () => {
 
 describe('Validation Tests', () => {
   require('./add-category/validation-tests/get');
+  require('./add-question/validation-tests/get');
   require('./question/validation-tests/get');
   require('./reset/validation-tests/get');
 });
