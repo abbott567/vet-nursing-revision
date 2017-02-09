@@ -22,16 +22,7 @@ describe('getResults(req)', () => {
   });
 
   it('Should throw an error if unsuccessful', () => {
-    const req = {
-      cookies: {
-        correct: [
-          '58926ca7a30eef5fe8ea585e'
-        ],
-        incorrect: [
-          '58976ca7a30eef5fe8ea585e'
-        ]
-      }
-    };
+    const req = {cookies: {}};
     return getResults(req)
     .catch(err => {
       expect(err).to.be.instanceOf(Error);
