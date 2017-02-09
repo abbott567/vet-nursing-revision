@@ -7,6 +7,7 @@ describe('Validation Tests', () => {
   require('./add-question/validation-tests/get');
   require('./question/validation-tests/get');
   require('./reset/validation-tests/get');
+  require('./results/validation-tests/get');
 });
 
 describe('Unit Tests', () => {
@@ -15,6 +16,7 @@ describe('Unit Tests', () => {
   require('./common/unit-tests/random-num');
   require('./common/unit-tests/shuffle');
   require('./question/unit-tests/get-question');
+  require('./results/unit-tests/get-results');
 });
 
 /* eslint-enable import/no-unassigned-import */
