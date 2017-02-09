@@ -1,12 +1,16 @@
+/* eslint-disable import/no-unassigned-import */
 process.env.NODE_ENV = 'test';
-require('../bin/www'); // eslint-disable-line import/no-unassigned-import
+require('../bin/www');
 
-// Common Tests
-require('../views/common/tests').randomNum();
-require('../views/common/tests').shuffle();
+describe('Unit Tests', () => {
+  require('./common/unit-tests/random-num');
+  require('./common/unit-tests/shuffle');
+  require('./add-question/unit-tests/build-question');
+  require('./question/unit-tests/get-question');
+});
 
-// Add Question
-require('../views/add-question/tests').buildQuestion();
+describe('Validation Tests', () => {
+  require('./question/validation-tests/get');
+});
 
-// View Question
-require('../views/question/tests').getQuestion();
+/* eslint-enable import/no-unassigned-import */
