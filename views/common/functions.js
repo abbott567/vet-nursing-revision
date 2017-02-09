@@ -8,10 +8,15 @@ module.exports = {
   },
 
   shuffle: array => {
-    for (let i = array.length; i; i--) {
-      const n = Math.floor(Math.random() * i);
-      [array[i - 1], array[n]] = [array[n], array[i - 1]];
+    let currentIndex = array.length;
+    while (currentIndex !== 0) {
+      const randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      const temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
+
     return array;
   },
 
