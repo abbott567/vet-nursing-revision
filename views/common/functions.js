@@ -22,7 +22,7 @@ module.exports = {
       return results;
     })
     .catch(err => {
-      return err;
+      throw err;
     });
   }
 };

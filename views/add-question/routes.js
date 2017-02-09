@@ -6,14 +6,11 @@ const {buildQuestion} = require('./functions');
 const Category = mongoose.model('Category');
 const router = new express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   if (req.cookies.verified === 'true') {
     getCategories(Category)
     .then(categories => {
       res.render('add-question/view', {categories});
-    })
-    .catch(err => {
-      next(err);
     });
   } else {
     res.redirect('/verify?question=true');
