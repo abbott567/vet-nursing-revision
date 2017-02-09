@@ -1,7 +1,3 @@
-const mongoose = require('mongoose');
-
-const Category = mongoose.model('Category');
-
 module.exports = {
   randomNum: (min, max) => {
     return Math.floor((Math.random() * (max - min + 1)) + min);
@@ -20,7 +16,7 @@ module.exports = {
     return array;
   },
 
-  getCategories: () => {
+  getCategories: Category => {
     return Category.find({})
     .then(results => {
       return results;
