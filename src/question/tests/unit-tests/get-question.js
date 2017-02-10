@@ -1,5 +1,5 @@
 const chai = require('chai');
-const {getQuestion} = require('../../../src/question/functions');
+const {getQuestion} = require('../../functions');
 
 const expect = chai.expect;
 

@@ -1,6 +1,6 @@
 const chai = require('chai');
 const mongoose = require('mongoose');
-const {getCategories} = require('../../../src/common/functions');
+const {getCategories} = require('../../functions');
 
 const Category = mongoose.model('Category');
 const expect = chai.expect;
