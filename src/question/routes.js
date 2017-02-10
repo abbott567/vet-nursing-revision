@@ -17,7 +17,7 @@ router.get('/:catId/question', (req, res) => {
 });
 
 router.post('/:catId/question', (req, res) => {
-  updateTotals(req, res)
+  updateTotals(req, res, Question)
   .then(() => {
     updateQuestionsAnswered(req, res);
   })

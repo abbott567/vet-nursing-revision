@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const {randomNum} = require('../common/functions');
 const {shuffle} = require('../common/functions');
 
@@ -24,8 +23,7 @@ module.exports = {
     });
   },
 
-  updateTotals: (req, res) => {
-    const Question = mongoose.model('Question');
+  updateTotals: (req, res, Question) => {
     return Question.findOne({_id: req.body.id})
     .then(q => {
       if (req.body.answer === q.correct) {
@@ -37,6 +35,7 @@ module.exports = {
         incorrect.push(q.id);
         res.cookie('incorrect', incorrect);
       }
+      return true;
     })
     .catch(err => {
       throw err;
