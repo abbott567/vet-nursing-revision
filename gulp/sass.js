@@ -9,7 +9,7 @@ const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 
 gulp.task('sass', () => {
-  return gulp.src('./views/**/*.scss')
+  return gulp.src('./src/**/*.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(rename('style.css'))
   .pipe(gulp.dest('./public/stylesheets'));

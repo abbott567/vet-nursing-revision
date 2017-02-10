@@ -1,5 +1,5 @@
 const chai = require('chai');
-const {getResults} = require('../../../views/results/functions');
+const {getResults} = require('../../../src/results/functions');
 
 const expect = chai.expect;
 

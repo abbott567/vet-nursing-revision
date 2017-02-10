@@ -1,5 +1,5 @@
 const chai = require('chai');
-const {shuffle} = require('../../../views/common/functions');
+const {shuffle} = require('../../../src/common/functions');
 
 const expect = chai.expect;
 

@@ -15,14 +15,14 @@ mongoose.model('Category', require('./models/category').Category);
 
 const app = express();
 
-nunjucks.configure('views', {
+nunjucks.configure('src', {
   watch: true,
   noCache: true,
   express: app
 });
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src'));
 app.set('view engine', 'html');
 
 if (process.env.NODE_ENV === 'development') {
