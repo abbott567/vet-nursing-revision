@@ -46,7 +46,7 @@ module.exports = {
     const answeredQuestions = req.cookies.answeredQuestions || [];
     answeredQuestions.push(req.body.id);
     res.cookie('answeredQuestions', answeredQuestions);
-    return;
+    return true;
   }
 };
 

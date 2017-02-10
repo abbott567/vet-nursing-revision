@@ -18,6 +18,7 @@ describe('Unit Tests', () => {
   require('../src/question/tests/unit-tests/update-totals');
   require('../src/results/tests/unit-tests/get-results');
   require('../src/question/tests/unit-tests/get-question');
+  require('../src/question/tests/unit-tests/update-questions-answered');
 });
 
 /* eslint-enable import/no-unassigned-import */
