@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 const {randomNum} = require('../common/functions');
 const {shuffle} = require('../common/functions');
 
-const Question = mongoose.model('Question');
-
 module.exports = {
-  getQuestion: req => {
+  getQuestion: (req, Question) => {
     const answeredQuestions = req.cookies.answeredQuestions || [];
     return Question.find({
       $and: [
@@ -27,6 +25,7 @@ module.exports = {
   },
 
   updateTotals: (req, res) => {
+    const Question = mongoose.model('Question');
     return Question.findOne({_id: req.body.id})
     .then(q => {
       if (req.body.answer === q.correct) {

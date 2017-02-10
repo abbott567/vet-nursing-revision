@@ -15,8 +15,8 @@ describe('Unit Tests', () => {
   require('../src/common/tests/unit-tests/get-categories');
   require('../src/common/tests/unit-tests/random-num');
   require('../src/common/tests/unit-tests/shuffle');
-  require('../src/question/tests/unit-tests/get-question');
   require('../src/results/tests/unit-tests/get-results');
+  require('../src/question/tests/unit-tests/get-question');
 });
 
 /* eslint-enable import/no-unassigned-import */
