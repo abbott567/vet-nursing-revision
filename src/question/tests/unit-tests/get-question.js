@@ -38,7 +38,13 @@ describe('getQuestion(req, Question)', () => {
   });
 
   it('Should return an error if the query errors', () => {
-    const Question = mongoose.model('Question');
+    const Question = {
+      find() {
+        return new Promise((resolve, reject) => {
+          reject(new Error('Error'));
+        });
+      }
+    };
     const req = {
       cookies: {
         answeredQuestions: []
@@ -46,11 +52,6 @@ describe('getQuestion(req, Question)', () => {
       params: {
         catId: ''
       }
-    };
-    Question.find = function () {
-      return new Promise((resolve, reject) => {
-        reject(new Error('Error'));
-      });
     };
     return getQuestion(req, Question)
     .catch(err => {
