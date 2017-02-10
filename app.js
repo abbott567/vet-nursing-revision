@@ -23,7 +23,7 @@ nunjucks.configure('src', {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'src'));
-app.set('view engine', 'html');
+app.set('view engine', 'njk');
 
 if (process.env.NODE_ENV === 'development') {
   app.use(logger('dev'));
