@@ -1,4 +1,5 @@
 const express = require('express');
+const {getUrl} = require('./functions');
 
 const router = new express.Router();
 
@@ -18,11 +19,3 @@ router.post('/', (req, res) => {
 
 module.exports = router;
 
-function getUrl(req) {
-  if (req.query.question === 'true') {
-    return '/add-question';
-  } else if (req.query.category === 'true') {
-    return '/add-category';
-  }
-  return '/';
-}
